@@ -1,0 +1,65 @@
+Insurance Tables:
+
+
+mysql> create database insurance;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ecommerce          |
+| employee           |
+| fanny              |
+| information_schema |
+| insurance          |
+| mysql              |
+| performance_schema |
+| projectmanagement  |
+| sys                |
+| techshop           |
+| testdb             |
++--------------------+
+11 rows in set (0.02 sec)
+
+mysql> use insurance;
+Database changed
+mysql> -- Table for Policy
+mysql> CREATE TABLE Policy (
+    ->     policyId INT PRIMARY KEY,
+    ->     policyName VARCHAR(100),
+    ->     premium DOUBLE
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO Policy (policyId, policyName, premium) VALUES
+    -> (101, 'Health Secure', 1200.50),
+    -> (102, 'Life Plus', 1800.75),
+    -> (103, 'Auto Shield', 950.00),
+    -> (104, 'Travel Guard', 500.00);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> desc policy;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| policyId   | int          | NO   | PRI | NULL    |       |
+| policyName | varchar(100) | YES  |     | NULL    |       |
+| premium    | double       | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> select * from policy;
++----------+---------------+---------+
+| policyId | policyName    | premium |
++----------+---------------+---------+
+|      101 | Health Secure |  1200.5 |
+|      102 | Life Plus     | 1800.75 |
+|      103 | Auto Shield   |     950 |
+|      104 | Travel Guard  |     500 |
+|      105 | car insurance |    1740 |
++----------+---------------+---------+
+5 rows in set (0.00 sec)
+
+mysql>
